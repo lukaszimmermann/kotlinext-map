@@ -11,6 +11,7 @@ class MapExtensionTests {
         assertEquals(listOf("foo?bar"), mapOf("foo" to "bar").asKeyValueList('?'))
         assertEquals(listOf("foo=bar "), mapOf("foo" to "bar ").asKeyValueList(trim = false))
         assertEquals(listOf("foo ?bar"), mapOf("foo " to "bar").asKeyValueList('?', trim = false))
+        assertEquals(listOf("foo? bar"), mapOf("foo" to " bar").asKeyValueList('?', trim = false))
         assertEquals(emptyList<String>(), emptyMap<String, String>().asKeyValueList())
         assertEquals(emptyList<String>(), emptyMap<String, String>().asKeyValueList(trim = false))
     }
